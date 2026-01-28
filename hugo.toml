@@ -5,12 +5,13 @@ theme = 'blowfish'
 
 [params]
   chart = true
-# これがないと、外部（Amazon）の画像をサムネイルとして使えません
-  externalImage = true 
-  
-  # 念のため、カードビューの設定も確認してください
-  [params.homepage]
-    cardView = true
-    cardThumbnail = true
+  # 重要：外部サイトの画像を許可する設定
+  externalImage = true
+
+[params.homepage]
+  layout = "card"
+  # 重要：カード形式でサムネイルを表示する設定
+  cardView = true
+  cardThumbnail = true
 
 
