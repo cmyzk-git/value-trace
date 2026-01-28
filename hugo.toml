@@ -1,4 +1,4 @@
-baseURL = 'https://[あなたのユーザー名].github.io/value-trace/'
+baseURL = 'https://cmyzk-git.github.io/value-trace/'
 languageCode = 'ja'
 title = 'Value Trace'
 theme = 'blowfish'
@@ -14,3 +14,4 @@ theme = 'blowfish'
   cardThumbnail = true
   showRecent = true
   showRecentItems = 6
+
