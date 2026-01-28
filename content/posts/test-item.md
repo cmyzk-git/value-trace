@@ -7,7 +7,7 @@ price_dates: ["2026/1/28"]
 
 ## 現在の価格: 950円
 
-{{< chart data="price-chart-test-item" >}}
+{{< chart >}}
 {
   "type": "line",
   "data": {
