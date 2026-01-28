@@ -2,10 +2,13 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: ["main"]
+  workflow_dispatch: # 手動実行ボタンを出すための追加
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,18 +16,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          # サブモジュールを使わず、現在のリポジトリの中身だけでビルドする
+          fetch-depth: 0 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
       - name: Build
-        run: hugo --minify
+        # --minify を外し、一旦エラーが出にくい基本構成でビルド
+        run: hugo
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
   deploy:
     environment:
       name: github-pages
