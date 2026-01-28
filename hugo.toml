@@ -5,14 +5,12 @@ theme = 'blowfish'
 
 [params]
   chart = true
-  # Amazonなどの外部画像を許可する重要なスイッチ
+# これがないと、外部（Amazon）の画像をサムネイルとして使えません
   externalImage = true 
-
-[params.homepage]
-  layout = "card"
-  cardView = true
-  cardThumbnail = true
-  showRecent = true
-  showRecentItems = 6
+  
+  # 念のため、カードビューの設定も確認してください
+  [params.homepage]
+    cardView = true
+    cardThumbnail = true
 
 
