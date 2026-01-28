@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: ["main"]
-  workflow_dispatch: # 手動実行ボタンを出すための追加
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,7 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # サブモジュールを使わず、現在のリポジトリの中身だけでビルドする
+          # ここを true にすることで、テーマの中身を確実に読み込ませます
+          submodules: true 
           fetch-depth: 0 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -24,8 +25,8 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - name: Build
-        # --minify を外し、一旦エラーが出にくい基本構成でビルド
-        run: hugo
+        # テーマを明示的に指定してビルド
+        run: hugo --theme blowfish
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
