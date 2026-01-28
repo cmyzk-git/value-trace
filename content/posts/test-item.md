@@ -1,6 +1,7 @@
 ---
 title: "テスト商品"
-date: 2026-01-20T00:00:00Z
+date: 2026-01-28T04:06:24.754Z
+featured_image: "画像URL"
 draft: false
 ---
 
@@ -9,26 +10,28 @@ draft: false
 {{< chart >}}
 type: "line",
 data: {
-  labels: ["1/20", "1/22", "1/25", "1/28"],
+  labels: ["2026/1/28"],
   datasets: [{
-    label: "最安値 推移",
-    data: [950, 920, 980, 950],
+    label: "価格推移",
+    data: [950],
     fill: true,
-    backgroundColor: "rgba(59, 130, 246, 0.1)",
-    borderColor: "#3b82f6",
-    pointBackgroundColor: "#3b82f6",
-    pointRadius: 5,
-    tension: 0.3
+    backgroundColor: "rgba(54, 162, 235, 0.1)",
+    borderColor: "rgb(54, 162, 235)",
+    borderWidth: 2,
+    pointRadius: 2,
+    tension: 0.4
   }]
+},
+options: {
+  scales: {
+    y: {
+      beginAtZero: false
+    }
+  }
 }
 {{< /chart >}}
 
----
-
-### 商品情報
-| 項目 | 内容 |
-| :--- | :--- |
-| メーカー | テストメーカー |
-| カテゴリ | サンプル |
+### 商品説明
+テストです
 
 [👉 商品ページで詳細を見る](https://google.com)
