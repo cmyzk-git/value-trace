@@ -17,7 +17,6 @@ theme = "blowfish"
 [params.homepage]
   layout = "card"
   cardView = true
-cardThumbnail = true
   showRecent = true
   showRecentItems = 6
   showSummary = true
@@ -38,3 +37,4 @@ cardThumbnail = true
 [markup.goldmark.renderer]
   # グラフ表示に必要
   unsafe = true
+
