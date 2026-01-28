@@ -1,4 +1,10 @@
 baseURL = "https://cmyzk-git.github.io/value-trace/"
-theme = "blowfish"baseURL = "https://cmyzk-git.github.io/value-trace/"
+languageCode = "ja"
+title = "Value Trace"
 theme = "blowfish"
-markup.goldmark.renderer.unsafe = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  chart = true
