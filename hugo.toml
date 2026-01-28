@@ -14,9 +14,13 @@ theme = 'blowfish'
   externalImages = true 
 
 
+# hugo.toml のどこかにこれがあるか確認
 [params.homepage]
+  showRecent = true
+  showRecentItems = 10
   layout = "card"
   cardView = true
   cardThumbnail = true
   showSummary = true
+
 
