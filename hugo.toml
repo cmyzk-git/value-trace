@@ -5,11 +5,18 @@ theme = "blowfish"
 
 [params]
   chart = true
+# おすすめは "neutral"（無機質でモダン）または "slate"（高級感）
+  colorScheme = "neutral" 
+  # デフォルトをダークモード(twilight)にすると、グラフの発色が美しく映えます
+  defaultAppearance = "twilight"
+containerWidth = "max-w-screen-lg"
 
 [params.homepage]
+layout = "card"       # カード形式
+  cardView = true       # カードに立体感（影）を出す
+  showSummary = true    # 記事の抜粋を表示
   showRecent = true
-  showRecentItems = 5
-  layout = "background"
+  showRecentItems = 6
 
 # どのフォルダ（posts）を表示するかを指定します
 [main]
