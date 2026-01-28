@@ -4,6 +4,8 @@ title = "Value Trace"
 theme = "blowfish"
 
 [params]
+# 外部URLの画像をサムネイルとして許可する設定
+  externalImage = true
   # グラフ機能を維持
   chart = true
   # クリーン・ミニマルな配色（白と薄いグレー）
@@ -15,6 +17,7 @@ theme = "blowfish"
 [params.homepage]
   layout = "card"
   cardView = true
+cardThumbnail = true
   showRecent = true
   showRecentItems = 6
   showSummary = true
