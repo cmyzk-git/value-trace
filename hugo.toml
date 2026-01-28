@@ -3,17 +3,17 @@ languageCode = "ja"
 title = "Value Trace"
 theme = "blowfish"
 
-# ここから下を追加・上書きしてください
 [params]
   chart = true
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
+[params.homepage]
+  showRecent = true
+  showRecentItems = 5
+  layout = "background"
+
+# どのフォルダ（posts）を表示するかを指定します
+[main]
+  sections = ["posts"]
 
 [markup.goldmark.renderer]
   unsafe = true
-
-[params.homepage]
-  displayNews = true
-  showLatest = true
