@@ -3,8 +3,13 @@ languageCode = "ja"
 title = "Value Trace"
 theme = "blowfish"
 
-[markup.goldmark.renderer]
-  unsafe = true
-
+# ここから下を追加・上書きしてください
 [params]
   chart = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
