@@ -13,8 +13,10 @@ theme = 'blowfish'
   # 外部サイトの画像を記事のアイキャッチとして使う許可
   externalImages = true 
 
+
 [params.homepage]
   layout = "card"
   cardView = true
   cardThumbnail = true
   showSummary = true
+
