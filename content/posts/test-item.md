@@ -1,6 +1,6 @@
 ---
 title: "テスト商品"
-date: "2026-01-28T04:08:41.400Z"
+date: "2026-01-28T04:10:41.325Z"
 featured_image: "https://m.media-amazon.com/images/I/619FoKzPByL._AC_SL1000_.jpg"
 draft: false
 ---
@@ -8,18 +8,20 @@ draft: false
 ## 🏷️ 現在の価格: 950円
 
 {{< chart >}}
-type: 'line',
-data: {
-  labels: ["2026/1/28"],
-  datasets: [{
-    label: '価格推移',
-    data: [950],
-    fill: true,
-    backgroundColor: 'rgba(54, 162, 235, 0.1)',
-    borderColor: 'rgb(54, 162, 235)',
-    borderWidth: 2,
-    tension: 0.4
-  }]
+{
+  "type": "line",
+  "data": {
+    "labels": ["2026/1/28"],
+    "datasets": [{
+      "label": "価格推移",
+      "data": [950],
+      "fill": true,
+      "backgroundColor": "rgba(54, 162, 235, 0.1)",
+      "borderColor": "rgb(54, 162, 235)",
+      "borderWidth": 2,
+      "tension": 0.4
+    }]
+  }
 }
 {{< /chart >}}
 
