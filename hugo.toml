@@ -13,6 +13,9 @@ theme = "blowfish"
   defaultAppearance = "light"
   # サイトの横幅を絞って、中央に美しく配置
   containerWidth = "max-w-screen-md"
+  images = ["https://m.media-amazon.com"] # Amazonの画像を許可
+  # または、より汎用的に
+  externalImage = true
 
 [params.homepage]
   layout = "card"
@@ -37,4 +40,5 @@ theme = "blowfish"
 [markup.goldmark.renderer]
   # グラフ表示に必要
   unsafe = true
+
 
