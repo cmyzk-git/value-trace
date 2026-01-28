@@ -13,3 +13,7 @@ theme = "blowfish"
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[params.homepage]
+  displayNews = true
+  showLatest = true
