@@ -13,12 +13,13 @@ theme = "blowfish"
   containerWidth = "max-w-screen-md"
 
 [params.homepage]
-  # カード形式で、境界線を薄く美しく
   layout = "card"
   cardView = true
   showRecent = true
   showRecentItems = 6
   showSummary = true
+  # ↓これを追加：画像がない場合に自動的にアイキャッチを探す設定
+  cardThumbnail = true
 
 [params.header]
   # メニューバーをシンプルに
