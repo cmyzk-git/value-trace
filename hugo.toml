@@ -12,6 +12,8 @@ theme = 'blowfish'
   showThumbnail = true
   # 外部サイトの画像を記事のアイキャッチとして使う許可
   externalImages = true 
+  # 外部画像（Amazon等）のブロックを回避するための設定
+  referrerPolicy = "no-referrer"
 
 
 # hugo.toml のどこかにこれがあるか確認
@@ -22,5 +24,6 @@ theme = 'blowfish'
   cardView = true
   cardThumbnail = true
   showSummary = true
+
 
 
