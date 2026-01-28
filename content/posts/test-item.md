@@ -1,7 +1,7 @@
 ---
 title: "テスト商品"
-date: 2026-01-28T04:06:24.754Z
-featured_image: "画像URL"
+date: 2026-01-28T04:06:25.412Z
+featured_image: "https://m.media-amazon.com/images/I/619FoKzPByL._AC_SL1000_.jpg"
 draft: false
 ---
 
