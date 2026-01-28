@@ -5,13 +5,16 @@ theme = 'blowfish'
 
 [params]
   chart = true
-  # 重要：外部サイトの画像を許可する設定
-  externalImage = true
+  externalImage = true # これはそのまま
+
+[params.article]
+  showFeatured = true
+  showThumbnail = true
+  # 外部サイトの画像を記事のアイキャッチとして使う許可
+  externalImages = true 
 
 [params.homepage]
   layout = "card"
-  # 重要：カード形式でサムネイルを表示する設定
   cardView = true
   cardThumbnail = true
-
-
+  showSummary = true
