@@ -1,22 +1,20 @@
 baseURL = 'https://cmyzk-git.github.io/value-trace/'
 languageCode = 'ja'
 title = 'Value Trace'
-theme = 'blowfish'
+theme = 'PaperMod'
 
 [params]
+  env = "production"
+  title = "Value Trace"
+  description = "商品価格推移アーカイブ"
+  
+  # 記事一覧で画像を表示するための設定
+  showFullContents = false
+  displayFullContent = false
+  
+  # グラフ(Chart.js)を有効にする
   chart = true
-  externalImage = true
-  referrerPolicy = "no-referrer"
 
-[params.article]
-  showFeatured = true
-  showThumbnail = true
-  externalImages = true
-
-[params.homepage]
-  showRecent = true
-  showRecentItems = 10
-  layout = "card"
-  cardView = true
-  cardThumbnail = true
-  showSummary = true
+[params.cover]
+  responsiveImages = false # 外部URL画像を使用するためオフにする
+  linkFullImages = true
