@@ -19,18 +19,17 @@ jobs:
           # ここを true にすることで、テーマの中身を確実に読み込ませます
           submodules: true 
           fetch-depth: 0 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          hugo-version: 'latest'
-          extended: true
-      - name: Build
-        # テーマを明示的に指定してビルド
-        run: hugo --theme blowfish
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
+          submodules: true
+          fetch-depth: 0
+
+      # ここにPaperModをダウンロードする処理を追加
+      - name: Download PaperMod Theme
+        run: |
+          mkdir -p themes
+          git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
 
   deploy:
     environment:
@@ -42,3 +41,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
