@@ -6,15 +6,20 @@ theme = 'PaperMod'
 [params]
   env = "production"
   title = "Value Trace"
-  description = "商品価格推移アーカイブ"
+  # 記事一覧を「2列」または「3列」のカード形式に近づける設定
+  ShowFullTextContent = false
+  ShowReadingTime = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
   
-  # 記事一覧で画像を表示するための設定
-  showFullContents = false
-  displayFullContent = false
-  
-  # グラフ(Chart.js)を有効にする
-  chart = true
+  # トップページのレイアウト（重要）
+  [params.homeInfoParams]
+    Title = "Value Trace Archive"
+    Content = "日々の価値の変遷を記録する、静かなる標本室。"
 
-[params.cover]
-  responsiveImages = false # 外部URL画像を使用するためオフにする
-  linkFullImages = true
+  # 画像の表示を最適化
+  [params.cover]
+    responsiveImages = false
+    linkFullImages = true
+    hidden = false # 記事詳細でも画像を表示する
