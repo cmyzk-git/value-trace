@@ -3,11 +3,11 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+<script type="text/javascript">
     (function() {
         const ctx = document.getElementById('chart-{{ .Ordinal }}').getContext('2d');
-        // .Innerの内容を文字列として取得し、JavaScriptオブジェクトとして評価する
-        const chartData = {{ .Inner | safeJS }};
-        new Chart(ctx, chartData);
+        // rawフィルタを使ってHugoの介入を完全に遮断します
+        const chartConfig = {{ .Inner | safeJS }};
+        new Chart(ctx, chartConfig);
     })();
 </script>
