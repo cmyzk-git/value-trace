@@ -1,4 +1,5 @@
 name: Deploy Hugo site to Pages
+
 on:
   push:
     branches: ["main"]
@@ -9,6 +10,14 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,20 +25,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # ここを true にすることで、テーマの中身を確実に読み込ませます
-          submodules: true 
-          fetch-depth: 0 
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
           submodules: true
           fetch-depth: 0
 
-      # ここにPaperModをダウンロードする処理を追加
+      - name: Install Hugo CLI
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.121.1/hugo_extended_0.121.1_linux-64bit.tar.gz
+          tar -xf hugo_extended_0.121.1_linux-64bit.tar.gz
+          sudo mv hugo /usr/local/bin/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # テーマのダウンロードを確実に行う
       - name: Download PaperMod Theme
         run: |
           mkdir -p themes
           git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod
+
+      - name: Build with Hugo
+        run: |
+          hugo --theme PaperMod --minify --baseURL "${{ steps.configure-pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
   deploy:
     environment:
@@ -41,4 +62,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
