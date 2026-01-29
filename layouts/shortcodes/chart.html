@@ -1,13 +1,21 @@
-<div style="position: relative; margin: 2rem 0; height: 300px;">
+<div style="position: relative; margin: 2rem 0; height: 300px; width: 100%;">
     <canvas id="chart-{{ .Ordinal }}"></canvas>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="text/javascript">
+{{ if not (.Page.Scratch.Get "chartjs-loaded") }}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{ .Page.Scratch.Set "chartjs-loaded" true }}
+{{ end }}
+
+<script>
     (function() {
         const ctx = document.getElementById('chart-{{ .Ordinal }}').getContext('2d');
-        // rawフィルタを使ってHugoの介入を完全に遮断します
-        const chartConfig = {{ .Inner | safeJS }};
-        new Chart(ctx, chartConfig);
+        const config = {{ .Inner | safeJS }};
+        // DOMの読み込み完了を待ってから実行
+        if (typeof Chart !== 'undefined') {
+            new Chart(ctx, config);
+        } else {
+            window.addEventListener('load', () => new Chart(ctx, config));
+        }
     })();
 </script>
